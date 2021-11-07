@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loic Frisch</title>
+    <link rel="stylesheet" href="eportfolio_styles_v2.css">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="exindex.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+        emailjs.init("user_JZrKWd73uqDHwqCLvt3Uy");
+    })();
+</script>
+</head>
+
+<body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/lf_logo.svg" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Projects</a>
+                </li>
+                <li class="nav_link">
+                    <a href="#photography" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Photography</a>
+                    </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    "><i class="fas fa-adjust"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header">
+            <header class="header">
+                <div class="header__content">
+                    <h1 class="title">Hello!</h1>
+                    <h1 class="title title--secondary">My name is Loic.</h1>
+                    <p class="header__para">
+                        I am a recent <b class="orange">double Masters graduate</b> with a very stong interrest in <b class="orange">Frontend Software Engineering</b>. 
+                        <br>
+                        Here is a little bit more <b class="orange click" onclick="toggleModal()">about me.</b>
+                    </p>
+                    <div class="social__list">
+                        <a href="https://www.linkedin.com/in/loicjohannfrisch/" target="_blank" class="social__link click">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="./assets/LF_CV.pdf" target="_blank" class="social__link click">
+                            <i class="fas fa-file-pdf"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fas fa-envelope"></i>
+            </button>
+            </a>
+            <a href="#projects" class="scroll">
+                <div class="scroll__icon click"></div>
+            </a>
+        </div>
+            <div class="modal">
+                <div class="modal__half modal__about">
+                    <h3 class="modal__title modal__title--about" >A little bit about me.</h3>
+                    <h4 class="modal__sub-title modal__sub-title--about">Novice Frontend Software Engineer</h4>
+                    <p class="modal__para">
+                        I am a 26 year old Haitian-American with a strong interrest for <span class="orange">frontend software engineering</span>.
+                        <br>
+                        I am fluent in <span class="orange">French</span>, <span class="orange">English</span>, and <span class="orange">Haitian Creole</span>.
+                        I also enjoy photography as a hobby.
+                        <br>
+                        I aspire to become an <span class="orange">experienced developper</span> who can create great websites with unique user experiences.
+                    </p>
+                    <div class="modal__languages">
+                        <figure class="modal__language">
+                            <img class="modal__language--img" src="./assets/html.png" alt="">
+                            <span class="language__name">HTML</span>
+                        </figure>
+                        <figure class="modal__language">
+                            <img class="modal__language--img" src="./assets/css.png" alt="">
+                            <span class="language__name">CSS</span>
+                        </figure>
+                        <figure class="modal__language">
+                            <img class="modal__language--img" src="./assets/python.png" alt="">
+                            <span class="language__name">PYTHON</span>
+                        </figure>
+                        <figure class="modal__language">
+                            <img class="modal__language--img" src="./assets/sql.png" alt="">
+                            <span class="language__name">SQL</span>
+                        </figure>
+                    </div>
+                </div>
+                <div class="modal__half modal__contact">
+                    <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                    <h3 class="modal__title modal__title--contact">Let's Have a Chat!</h3>
+                    <h4 class="modal__sub-title modal__sub-title--contact">I would love to hear from you.</h4>
+                    <form id="contact__form" onsubmit="contact(event)">
+                        <div class="form__item">
+                            <label class="form__item--label">Name</label>
+                            <input class="input" name="user_name" type="text"></input>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__item--label">E-mail</label>
+                            <input class="input" name="user_email" type="email"></input>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__item--label">Message</label>
+                            <textarea class="input" name="message" type="text"></textarea>
+                        </div>
+                        <button id="contact__submit" class="form__submit">Send it my way!</button>
+                    </form>
+                    <div class="modal__overlay modal__overlay--loading">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <div class="modal__overlay modal__overlay--success">
+                        Thank you very much for your message! Looking forward to speaking to you soon!
+                    </div>
+                </div>
+            </div>
+        <img src="./assets/semi circle.svg" class="shape shape--0">
+        <img src="./assets/circle.svg" class="shape shape--1">
+        <img src="./assets/squiggly.svg" class="shape shape--2">
+        <img src="./assets/circle.svg" class="shape shape--3">
+        <img src="./assets/triangle.svg" class="shape shape--4">
+        <img src="./assets/circle.svg" class="shape shape--5">
+        <img src="./assets/squiggly.svg" class="shape shape--6">
+        <img src="./assets/circle.svg" class="shape shape--7">
+        <img src="./assets/semi circle.svg" class="shape shape--8">
+    </section> 
+
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Some of my <span class="orange">projects</span>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/TESLA-LOGO.jpg" class="project__img" alt="">
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Tesla Inc: Autonomous Revolution
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    Loic J. Frisch - 2021
+                                </h4>
+                                <p class="project__description--para">
+                                    An analysis of Tesla Inc. as a company and their future in autonomous vehicle production.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="./assets/Tesla Data Analysis.pdf" target="_blank" class="project__description--link">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/elc.png" class="project__img" alt="">
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Estée Lauder Companies
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    Loic J. Frisch - 2020
+                                </h4>
+                                <p class="project__description--para">
+                                    Strategic Analysis of Estee Lauder Companies containing trends, market analyis, and recomendations. 
+                                    (Written during the beginning of Covid-19)
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="./assets/Estee Lauder strategic Analysis.pdf" target="_blank" class="project__description--link">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>   
+
+<section id="photography">
+    <div class="container">
+        <div class="row">
+            <h1 class="section__title"><span class="orange"> My Photography</span></h1>
+            <ul class="photo__list">
+                <li class="photo">
+                    <div class="photo__wrapper">
+                        <img src="./images/beach.jpg" class="project__img" alt="">
+                        <div class="photo__description">
+                            <h3 class="photo__description--title">
+                                Beach Blues
+                            </h3>
+                            <div class="photo__description--links">
+                                <a href="https://www.instagram.com/p/COibvPdjMm4/" target="_blank" class="project__description--link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="photo">
+                    <div class="photo__wrapper">
+                        <img src="./images/sunset.jpg" class="project__img" alt="">
+                        <div class="photo__description">
+                            <h3 class="photo__description--title">
+                                Sur la Cote
+                            </h3>
+                            <div class="photo__description--links">
+                                 <a href="https://www.instagram.com/p/COEVheADL_J/" target="_blank" class="project__description--link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="photo">
+                    <div class="photo__wrapper">
+                        <img src="./images/winter.jpg" class="project__img" alt="">
+                        <div class="photo__description">
+                            <h3 class="photo__description--title">
+                                Winter Trees
+                            </h3>
+                            <div class="photo__description--links">
+                                <a href="https://www.instagram.com/p/CI54aQojyqE/" target="_blank" class="project__description--link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="photo">
+                    <div class="photo__wrapper">
+                        <img src="./images/moet.jpg" class="project__img" alt="">
+                        <div class="photo__description">
+                            <h3 class="photo__description--title">
+                                Champagne?
+                            </h3>
+                            <div class="photo__description--links">
+                                <a href="https://www.instagram.com/p/B0lWBGpiYKY/" target="_blank" class="project__description--link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+   
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+            <figure>
+                <img class="footer__logo--img" src="./assets/lf_logo.svg" alt="">
+            </figure>
+            <div class="footer__social--lists">
+                <a href="https://www.linkedin.com/in/loicjohannfrisch/" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                LinkedIn
+                </a>
+                <a href="#" onclick="toggleModal()" " class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                Contact
+                </a>
+                <a href="https://www.instagram.com/ljf_photography/" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                Instagram
+                </a>
+                <a href="./assets/LF_CV.pdf" target="_blank" class="
+                footer__social--link
+                link__hover-effect
+                link__hover-effect--white
+                ">
+                Resume
+                </a>
+            </div> 
+            <div class="footer__copyright">Copyright © 2021 Loic J Frisch</div>
+        </div>
+    </div>
+    </footer>
+</body>
+</html>
